@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface eee {
-  name: string;
-}
-const branch2: eee[]=[
-  {name:'Eng Lab'},
-  {name:'Phy Lab'},
-  {name:'ece-1'},
-  {name:'ece-2'},
-  {name:'em'}
-];
-
+import { ActivatedRoute } from "@angular/router";
+import { HttpClient } from '@angular/common/http'; 
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-details',
@@ -18,12 +9,30 @@ const branch2: eee[]=[
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  displayedColumns: string[] = ['name'];
-  dataSource=branch2;
-  constructor() {
-   }
+  displayedColumns: string[] = ['BranchCode', 'SubCode', 'SubName', 'Credits', 'YearNo', 'SemNo'];
+  dataSource:string[];
+  Bcode: string;
+  url='http://localhost:57271/api';
+
+  constructor(private route: ActivatedRoute, private httpClient: HttpClient) { }
 
   ngOnInit() {
-  }
 
+    this.route.params.subscribe(params => {
+      console.log("Check")
+      console.log(params['BranchCode']);
+      this.Bcode = params['BranchCode'] ? params['BranchCode'] : "ECE";
+      this.dataSource = []
+      
+      this.httpClient.get(this.url+'/SubDetails/'+this.Bcode+"").subscribe(  
+        data => {  
+         this.dataSource = data as string [];
+        
+        });
+        
+
+    });
+  
+  console.log(this.dataSource)
+  }
 }

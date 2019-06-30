@@ -1,0 +1,42 @@
+
+<mat-list>
+    <mat-list-item><app-header></app-header></mat-list-item>
+    <mat-divider></mat-divider>
+</mat-list>
+<mat-drawer-container class="branch">
+    <mat-drawer mode="side" opened><app-sidenav></app-sidenav></mat-drawer>
+    <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
+  </mat-drawer-container>
+
+  <!--
+    <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile><app-sidenav></app-sidenav></mat-grid-tile>
+    <mat-grid-tile><router-outlet></router-outlet></mat-grid-tile> 
+    
+
+  </mat-grid-list>
+ -->
+<!--
+<mat-grid-list cols="1" rows="2" rowHeight="10:1">
+    <mat-grid-tile><app-header></app-header></mat-grid-tile>
+<mat-grid-list cols="2">
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened><app-sidenav></app-sidenav></mat-drawer>
+    <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
+  </mat-drawer-container>
+</mat-grid-list>
+</mat-grid-list>
+ -->
+ <!--
+<div>
+
+  <mat-grid-list cols="4" rows="6" rowHeight="100px">
+    <mat-grid-tile  rows="1"><app-header></app-header></mat-grid-tile>
+  <mat-grid-list cols="4" rows="6" rowHeight="100px">
+    <mat-grid-tile clos="1" rows="5"><app-sidenav></app-sidenav></mat-grid-tile>
+    <mat-grid-tile clos="3" rows="5"><router-outlet></router-outlet></mat-grid-tile> 
+  </mat-grid-list>
+  </mat-grid-list>
+</div>
+
+ -->

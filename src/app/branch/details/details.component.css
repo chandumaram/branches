@@ -1,0 +1,19 @@
+.mat-table {
+    overflow: auto;
+    max-height: 700px;
+  }
+
+.mat-header-cell {
+    color:white;
+    background:green;
+  }
+  
+.mat-cell:nth-child(even){
+  color:blue;
+    background-color:skyblue;
+    }
+
+    .mat-cell:nth-child(odd){
+        color:blue;
+        background-color:chocolate;
+        }
