@@ -3,18 +3,25 @@
     <mat-list-item><app-header></app-header></mat-list-item>
     <mat-divider></mat-divider>
 </mat-list>
-<mat-drawer-container class="branch">
+<div class="content">
+
+  <div class="col-sm-4">
+      <mat-drawer-container>
     <mat-drawer mode="side" opened><app-sidenav></app-sidenav></mat-drawer>
+  <div class="col-sm-8"> 
     <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
   </mat-drawer-container>
+  </div>
+  </div>
 
+</div>
   <!--
     <mat-grid-list cols="2" rowHeight="2:1">
     <mat-grid-tile><app-sidenav></app-sidenav></mat-grid-tile>
     <mat-grid-tile><router-outlet></router-outlet></mat-grid-tile> 
     
 
-  </mat-grid-list>
+  </mat-grid-list>   
  -->
 <!--
 <mat-grid-list cols="1" rows="2" rowHeight="10:1">
